@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Canvas fx:id="canvas" height="700.0" width="900.0">
+            <HBox.margin>
+                <Insets bottom="32.0" left="16.0" right="16.0" top="32.0"/>
+            </HBox.margin>
+        </Canvas>
+        <VBox spacing="16.0">
+            <children>
+                <VBox spacing="4.0">
+                    <children>
+                        <Label text="Draw config" textFill="WHITE"/>
+                        <Label text="Root x position (Press enter to repaint)" textFill="WHITE"/>
+                        <TextField fx:id="rootXTextField" promptText="Enter x position"/>
+                        <Label text="Root y position (Press enter to repaint)" textFill="WHITE"/>
+                        <TextField fx:id="rootYTextField" promptText="Enter y position"/>
+                        <Label text="Space x (Press enter to repaint)" textFill="WHITE"/>
+                        <TextField fx:id="spaceXTextField" promptText="Enter dy"/>
+                        <Label text="Space y (Press enter to repaint)" textFill="WHITE"/>
+                        <TextField fx:id="spaceYTextField" promptText="Enter dy"/>
+                        <Label text="Width node (Press enter to repaint)" textFill="WHITE"/>
+                        <TextField fx:id="widthTextField" promptText="Enter width"/>
+                        <Label text="Height node (Press enter to repaint)" textFill="WHITE"/>
+                        <TextField fx:id="heightTextField" promptText="Enter height"/>
+                    </children>
+                </VBox>
+                <VBox spacing="4.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="sizeLabel" maxWidth="1.7976931348623157E308" text="Size" textFill="WHITE"/>
+                        <HBox spacing="4.0">
+                            <children>
+                                <TextField fx:id="putKeyTextField" promptText="Enter key"/>
+                                <Button fx:id="putButton" mnemonicParsing="false" prefWidth="80.0" text="put"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="4.0">
+                            <children>
+                                <TextField fx:id="containsTextField" promptText="Enter key"/>
+                                <Button fx:id="containsButton" mnemonicParsing="false" prefWidth="80.0"
+                                        text="contains"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="4.0">
+                            <children>
+                                <TextField fx:id="removeTextField" promptText="Enter key"/>
+                                <Button fx:id="removeButton" mnemonicParsing="false" prefWidth="80.0" text="remove"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="4.0">
+                            <children>
+                                <Button fx:id="putRandom" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                        text="put random" HBox.hgrow="ALWAYS"/>
+                                <Button fx:id="clearButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                        text="clear" HBox.hgrow="ALWAYS"/>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="4.0">
+                            <children>
+                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#preorder"
+                                        text="Preorder"/>
+                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#inorder"
+                                        text="Inorder"/>
+                                <Button fx:id="postorder" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                        onAction="#postorder" text="Postorder"/>
+                            </children>
+                        </HBox>
+                        <Label fx:id="console" alignment="TOP_LEFT" maxHeight="1.7976931348623157E308"
+                               maxWidth="1.7976931348623157E308" text="Hello" textFill="WHITE" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+            </padding>
+        </VBox>
+    </children>
+</HBox>
